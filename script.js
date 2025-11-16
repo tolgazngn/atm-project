@@ -4,6 +4,18 @@ const MAX_ATTEMPTS = 3;
 const CORRECT_PASSWORD = "1234";
 let balance = 1000;
 
+//main
+
+if (login()) {
+    alert("Hoş geldiniz!");
+
+    menu();
+
+    alert("İyi günler dileriz!");
+} else {
+    alert("Şifreniz bloke edildi.");
+}
+
 //functions
 function login() {
     let attemptsLeft;
@@ -71,6 +83,7 @@ function depositMoney() {
 
         balance += amount;
         showBalance();
+
         return;
     }
 }
@@ -88,22 +101,11 @@ function withdrawMoney() {
 
         balance -= amount;
         showBalance();
+        
         return;
     }
 }
 
 function isPositive(value) {
     return value > 0;
-}
-
-//main
-
-if (login()) {
-    alert("Hoş geldiniz!");
-
-    menu();
-
-    alert("İyi günler dileriz!");
-} else {
-    alert("Şifreniz bloke edildi.");
 }
