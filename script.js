@@ -24,7 +24,6 @@ function login() {
     for (attemptsLeft = MAX_ATTEMPTS; attemptsLeft > 0;) {
         const password = prompt("Şifrenizi giriniz.", "").trim();
 
-        //bu kontrol ile kullanıcı deneme yapmadan hakkı azalmaz
         if (isInvalidInput(password)) continue outer;
 
         if (password == CORRECT_PASSWORD) {
