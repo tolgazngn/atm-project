@@ -41,7 +41,7 @@ function login() {
 }
 
 function isInvalidInput(value) {
-    return value == null || value == "";
+    return value == null || value.trim() == "";
 }
 
 function menu() {
@@ -78,7 +78,7 @@ function depositMoney() {
     while (true) {
         let amount = +prompt("Miktar giriniz", "").trim();
 
-        if (!isPositive(amount)) continue;
+        if (!isVaildAmount(amount)) continue;
 
         balance += amount;
         showBalance();
@@ -91,7 +91,7 @@ function withdrawMoney() {
     while (true) {
         let amount = +prompt("Miktar giriniz", "").trim();
 
-        if (!isPositive(amount)) continue;
+        if (!isVaildAmount(amount)) continue;
 
         if (amount > balance) {
             alert("Yetersiz bakiye");
@@ -105,6 +105,6 @@ function withdrawMoney() {
     }
 }
 
-function isPositive(value) {
+function isVaildAmount(value) {
     return value > 0;
 }
